@@ -1,12 +1,12 @@
 dwca-importer
 =============
 
-Shell scripts that downloads a DWC-Archive given an url, unzip, parses and converts to a csv format and sends the data to DataBase
+Shell scripts that downloads a DWC-Archive given an url, unzip, parses and converts to a csv format and sends it to DataBase
 
 If you are using it with a java application, you just need to put the files at "jboss/bin" and to call the script via code.
 
 E.g.:
-	
+```	
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,8 +27,9 @@ public class DWCAClass
 	    
 	}
 }
-
+```
 And you just call:
+```
 public static void main (String args[])
 {
 	DWCA dwcaImporter = new DWCA();
@@ -37,10 +38,9 @@ public static void main (String args[])
 	//if you want to pass a url you must pass "1" argument and the link, in zip or xls or xlsx format
 	dwcaImporter.executeDWCAImporter("1","http://urltodwcaarchive");
 }
-
+```
 
 =============
 ISSUES
 =============
-If your xls/xlsx file have a sheet name different for Plan1, you must to change the Sheet name to Plan1 or update script to read the sheet name given, in line 64, change Plan1 for YourSheetName:
-perl excel2csv.pl -e $DEST/$pathDWCA/planilha_dwca"$1" -s Plan1 > $DEST/$pathDWCA/occurrence.txt 
+

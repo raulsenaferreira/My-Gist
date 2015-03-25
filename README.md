@@ -43,4 +43,4 @@ public static void main (String args[])
 =============
 ISSUES
 =============
-The archive meta.xml is obligatory for the script determine which it's encoding of occurrence and identification texts and then parse them correctly.
+

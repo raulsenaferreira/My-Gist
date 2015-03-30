@@ -215,5 +215,5 @@ fi
 cd $DEST/$pathDWCA/
 #conexao com o banco e execucao das queries
 executaSQL $flagImportacao
-#/bin/rm -r $DEST/$pathDWCA/ #remove pasta dos arquivos já importados
+/bin/rm -r $DEST/$pathDWCA/ #remove pasta dos arquivos já importados
 exit

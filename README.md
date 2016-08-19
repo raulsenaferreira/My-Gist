@@ -1,46 +1,7 @@
-dwca-importer
+My-Gists
 =============
+Here i will put some links to piece of code and complete code solution to solve some problem or functionality, below you can find some interesting gists, feel free to contribute.
 
-Shell scripts that downloads a DWC-Archive given an url, unzip, parses and converts to a csv format and sends it to DataBase
+#### [GIST-1: Installing the latest version of Docker and Docker-Compose](https://gist.github.com/raulsenaferreira/2a519ca3d54e639a1369822a7d6ae8c7), without the problem of incompatibility of docker client and server versions (a commom and annoying bug when someone try to use these tools)
 
-If you are using it with a java application, you just need to put the files at "jboss/bin" and to call the script via code.
-
-E.g.:
-```	
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-public class DWCAClass
-{
-	public String executeDWCAImporter(String processType, String source) throws IOException, FileNotFoundException, Exception  
-	{
-	    final File batchFile = new File("script_dwca.sh");// jboss/bin/
-	
-	    final ProcessBuilder processBuilder = new ProcessBuilder(batchFile.getAbsolutePath(), processType, source);
-	    processBuilder.redirectErrorStream(true);
-	    //processBuilder.redirectOutput(outputFile);
-	    final Process process = processBuilder.start();
-	    final int exitStatus = process.waitFor();
-	    
-	}
-}
-```
-And you just call:
-```
-public static void main (String args[])
-{
-	DWCA dwcaImporter = new DWCA();
-	//if you want to pass a xls or xlsx file you must pass "0" argument and the name of file
-	dwcaImporter.executeDWCAImporter("0","dwcaarchive.xls");
-	//if you want to pass a url you must pass "1" argument and the link, in zip or xls or xlsx format
-	dwcaImporter.executeDWCAImporter("1","http://urltodwcaarchive");
-}
-```
-
-=============
-ISSUES
-=============
-
+####[GIST-2: Darwin core archive converter and importer](https://gist.github.com/raulsenaferreira/b9bf40d6aeeec722be42fcb93c496a96), a shell-script wrote to pick an URL or a .zip archive containing a DWC archive, read their contents, convert to SQL readable content and after that, this script export to a relational database (Postgres)
